@@ -20,7 +20,7 @@ class AdminController extends Controller
 
     public function manageadmin()
     {
-        $admin = User::paginate(1);
+        $admin = User::where('role', 'admin')->paginate(1);
         return view ('admin.page.manageadmin.index', compact('admin'));
     }
 
