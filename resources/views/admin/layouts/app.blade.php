@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="description" content="@yield('description')">
     <meta name="author" content="Creative Tim">
-    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+    <title>@yield('judul')</title>
     <!-- Favicon -->
     <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
     <!-- Fonts -->
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    @include('admin.sidebar')
+    @include('admin.component.sidebar')
     <!-- Main content -->
     <div class="main-content" id="panel">
         <!-- Topnav -->
@@ -78,26 +78,6 @@
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <!-- Avatar -->
-                                                <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg"
-                                                    class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>2 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <!-- Avatar -->
                                                 <img alt="Image placeholder" src="../assets/img/theme/team-2.jpg"
                                                     class="avatar rounded-circle">
                                             </div>
@@ -114,66 +94,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <!-- Avatar -->
-                                                <img alt="Image placeholder" src="../assets/img/theme/team-3.jpg"
-                                                    class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>5 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">Your posts have been liked a lot.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <!-- Avatar -->
-                                                <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg"
-                                                    class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>2 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <!-- Avatar -->
-                                                <img alt="Image placeholder" src="../assets/img/theme/team-5.jpg"
-                                                    class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>3 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">A new issue has been reported for Argon.</p>
-                                            </div>
-                                        </div>
-                                    </a>
+
                                 </div>
                                 <!-- View all -->
                                 <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View
@@ -233,7 +154,7 @@
                                         <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg">
                                     </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                                        <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
                                     </div>
                                 </div>
                             </a>
@@ -269,11 +190,7 @@
                         <div class="col-lg-6 col-7">
                             <h6 class="h2 text-white d-inline-block mb-0">@yield('judul')</h6>
                             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Components</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                </ol>
+                                @yield('breadcrumps')
                             </nav>
                         </div>
                         <div class="col-lg-6 col-5 text-right">

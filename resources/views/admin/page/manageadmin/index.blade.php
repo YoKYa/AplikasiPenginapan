@@ -1,6 +1,11 @@
-@extends('admin.app')
+@extends('admin.layouts.app')
 @section('judul','Manage Admin')
+@section('description', 'Deskripsi Manage Admin')
+@section('breadcrumps')
+{{ Breadcrumbs::render('ManageAdmin') }}
+@endsection
 @section('sub-judul','Tampil Data Admin')
+
 @section('content')
 
 <!-- Light table -->
