@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/manageadmin', [AdminController::class, 'manageadmin'])->name('manageadmin');
 
 Auth::routes();
 
