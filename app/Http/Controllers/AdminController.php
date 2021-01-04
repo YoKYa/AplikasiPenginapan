@@ -15,13 +15,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view ('admin.index');
+        return view ('admin.page.dashboard.index');
     }
 
     public function manageadmin()
     {
         $admin = User::paginate(1);
-        return view ('admin.manageadmin.index', compact('admin'));
+        return view ('admin.page.manageadmin.index', compact('admin'));
     }
 
     /**

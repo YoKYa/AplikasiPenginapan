@@ -1,0 +1,38 @@
+<!-- Example -->
+
+<?php
+
+use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
+
+Breadcrumbs::for('Dashboard', function ($trail) {
+    $trail->push('Dashboard', route('admin'));
+});
+
+Breadcrumbs::for('ManageAdmin', function ($trail) {
+    $trail->parent('Dashboard');
+    $trail->push('ManageAdmin', route('manageadmin'));
+});
+
+// // Home > About
+// Breadcrumbs::for('about', function ($trail) {
+//     $trail->parent('home');
+//     $trail->push('About', route('about'));
+// });
+
+// // Home > Blog
+// Breadcrumbs::for('blog', function ($trail) {
+//     $trail->parent('home');
+//     $trail->push('Blog', route('blog'));
+// });
+
+// // Home > Blog > [Category]
+// Breadcrumbs::for('category', function ($trail, $category) {
+//     $trail->parent('blog');
+//     $trail->push($category->title, route('category', $category->id));
+// });
+
+// // Home > Blog > [Category] > [Post]
+// Breadcrumbs::for('post', function ($trail, $post) {
+//     $trail->parent('category', $post->category);
+//     $trail->push($post->title, route('post', $post->id));
+// });
