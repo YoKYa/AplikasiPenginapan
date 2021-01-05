@@ -14,7 +14,7 @@ return [
     | - 'breadcrumbs::bootstrap3'  - Bootstrap 3
     | - 'breadcrumbs::bootstrap2'  - Bootstrap 2
     | - 'breadcrumbs::bulma'       - Bulma
-    | - 'breadcrumbs::foundation6' - Foundation 6
+| - 'breadcrumbs::foundation6' - Foundation 6
     | - 'breadcrumbs::materialize' - Materialize
     | - 'breadcrumbs::uikit'       - UIkit
     | - 'breadcrumbs::json-ld'     - JSON-LD Structured Data

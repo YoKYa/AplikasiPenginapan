@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -23,6 +24,25 @@ class AdminController extends Controller
         $admin = User::where('role', 'admin')->paginate(1);
         return view ('admin.page.manageadmin.index', compact('admin'));
     }
+    public function managepengusaha()
+    {
+        $admin = User::where('role', 'pengusaha')->paginate(1);
+        return view ('admin.page.manageadmin.index', compact('admin'));
+    }
+    public function managepelanggan()
+    {
+        $admin = User::where('role', 'pelanggan')->paginate(1);
+        return view ('admin.page.manageadmin.index', compact('admin'));
+    }
+    public function managehotel()
+    {
+        
+    }
+    public function adminprofil()
+    {
+        return view('admin.page.profil.index');
+    }
+
 
     /**
      * Show the form for creating a new resource.

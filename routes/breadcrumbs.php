@@ -1,5 +1,3 @@
-<!-- Example -->
-
 <?php
 
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
@@ -11,6 +9,14 @@ Breadcrumbs::for('Dashboard', function ($trail) {
 Breadcrumbs::for('ManageAdmin', function ($trail) {
     $trail->parent('Dashboard');
     $trail->push('ManageAdmin', route('manageadmin'));
+});
+Breadcrumbs::for('ManagePengusaha', function ($trail) {
+    $trail->parent('Dashboard');
+    $trail->push('ManagePengusaha', route('managepengusaha'));
+});
+Breadcrumbs::for('ManagePelanggan', function ($trail) {
+    $trail->parent('Dashboard');
+    $trail->push('ManagePelanggan', route('managepelanggan'));
 });
 
 // // Home > About
@@ -36,3 +42,4 @@ Breadcrumbs::for('ManageAdmin', function ($trail) {
 //     $trail->parent('category', $post->category);
 //     $trail->push($post->title, route('post', $post->id));
 // });
+?>

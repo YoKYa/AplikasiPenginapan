@@ -2,7 +2,7 @@
 @section('judul','Manage Admin')
 @section('description', 'Deskripsi Manage Admin')
 @section('breadcrumps')
-{{ Breadcrumbs::render('ManageAdmin') }}
+{{ (request()->is('admin/manageadmin') ? (Breadcrumbs::render('ManageAdmin')) : (request()->is('admin/managepengusaha') ? (Breadcrumbs::render('ManagePengusaha')) : (Breadcrumbs::render('ManagePelanggan'))))}}
 @endsection
 @section('sub-judul','Tampil Data Admin')
 
