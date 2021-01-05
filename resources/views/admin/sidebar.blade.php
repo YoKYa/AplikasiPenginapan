@@ -18,8 +18,16 @@
                                 <span class="nav-link-text">Dashboard</span>
                             </a>
                             <a class="nav-link" href="{{Route('manageadmin')}}">
-                                <i class="ni ni-tv-2 text-primary"></i>
+                                <i class="ni ni-circle-08 text-primary"></i>
                                 <span class="nav-link-text">Manage Admin</span>
+                            </a>
+                            <a class="nav-link" href="{{Route('manageadmin')}}">
+                                <i class="ni ni-circle-08 text-primary"></i>
+                                <span class="nav-link-text">Manage Pelanggan</span>
+                            </a>
+                            <a class="nav-link" href="{{Route('manageadmin')}}">
+                                <i class="ni ni-circle-08 text-primary"></i>
+                                <span class="nav-link-text">Manage Pengusaha</span>
                             </a>
                         </li>
                     </ul>
