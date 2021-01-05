@@ -5,5 +5,5 @@
     
 @endsection
 @section('content')
-halo admin
+
 @endsection
