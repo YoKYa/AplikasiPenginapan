@@ -2,7 +2,7 @@
 @section('judul','Manage Admin')
 @section('description', 'Deskripsi Manage Admin')
 @section('breadcrumps')
-{{ (request()->is('admin/manageadmin') ? (Breadcrumbs::render('ManageAdmin')) : (request()->is('admin/managepengusaha') ? (Breadcrumbs::render('ManagePengusaha')) : (Breadcrumbs::render('ManagePelanggan'))))}}
+{{ (request()->is('admin/manageadmin') ? (Breadcrumbs::render('Manage Admin')) : (request()->is('admin/managepengusaha') ? (Breadcrumbs::render('Manage Pengusaha')) : (Breadcrumbs::render('Manage Pelanggan'))))}}
 @endsection
 @section('sub-judul','Tampil Data Admin')
 
@@ -18,7 +18,7 @@
                 <th scope="col" class="sort" data-sort="budget">Email</th>
                 <th scope="col" class="text-right">
                     <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-success mr-2" style="border:2px solid #5e72e4" href="#"
+                        <a class="btn btn-sm btn-icon-only text-success mr-2" style="border:2px solid #5e72e4" href="{{ Route('useradd') }}"
                             role="button" aria-haspopup="true">
                             <i class="fas fa-plus"></i>
                         </a>
@@ -33,7 +33,7 @@
                 <th scope="row">
                     <div class="media align-items-center">
                         <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="../assets/img/theme/vue.jpg">
+                            <img alt="X_X" src="{{ asset('storage/'.$hasil->dp_path) }}">
                         </a>
                         <div class="media-body">
                             <span class="name mb-0 text-sm">{{ $hasil->name}}</span>
@@ -50,8 +50,9 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                            <a class="dropdown-item" href="#">Edit</a>
-                            <a class="dropdown-item" href="#">Hapus</a>
+                            <a class="dropdown-item" href="{{ Route('admin') }}/user/{{ $hasil->id }}">View</a>
+                            <a class="dropdown-item" href="{{ Route('admin') }}/user/{{ $hasil->id }}/edit">Edit</a>
+                            <a class="dropdown-item" href="">Hapus</a>
                         </div>
                     </div>
                 </td>

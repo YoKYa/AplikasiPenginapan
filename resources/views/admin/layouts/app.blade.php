@@ -12,6 +12,7 @@
     <!-- Main content -->
     @include('admin.layouts.header')
     <!-- Page content -->
+    @include('admin.component.ersc')
     @yield('content')
     <!-- Footer -->
     @include('admin.layouts.footer')

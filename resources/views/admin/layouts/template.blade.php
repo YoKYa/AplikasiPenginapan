@@ -1,6 +1,7 @@
 @extends('admin.layouts.app')
-@section('judul', 'Dashboard Admin')
-@section('description', 'Deskripsi Admin')
+@section('judul', 'My Profil')
+@section('sub-judul','My Profil')
+@section('description', 'Halaman Profil')
 @section('breadcrumps')
     
 @endsection

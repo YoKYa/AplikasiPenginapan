@@ -6,19 +6,26 @@ Breadcrumbs::for('Dashboard', function ($trail) {
     $trail->push('Dashboard', route('admin'));
 });
 
-Breadcrumbs::for('ManageAdmin', function ($trail) {
+Breadcrumbs::for('Manage Admin', function ($trail) {
     $trail->parent('Dashboard');
-    $trail->push('ManageAdmin', route('manageadmin'));
+    $trail->push('Manage Admin', route('manageadmin'));
 });
-Breadcrumbs::for('ManagePengusaha', function ($trail) {
+Breadcrumbs::for('Manage Pengusaha', function ($trail) {
     $trail->parent('Dashboard');
-    $trail->push('ManagePengusaha', route('managepengusaha'));
+    $trail->push('Manage Pengusaha', route('managepengusaha'));
 });
-Breadcrumbs::for('ManagePelanggan', function ($trail) {
+Breadcrumbs::for('Manage Pelanggan', function ($trail) {
     $trail->parent('Dashboard');
-    $trail->push('ManagePelanggan', route('managepelanggan'));
+    $trail->push('Manage Pelanggan', route('managepelanggan'));
 });
-
+Breadcrumbs::for('Profil Admin', function ($trail) {
+    $trail->parent('Dashboard');
+    $trail->push('Profil Admin', route('adminprofil'));
+});
+Breadcrumbs::for('Edit Profil Admin', function ($trail) {
+    $trail->parent('Profil Admin');
+    $trail->push('Edit Profil Admin', route('editadminprofil'));
+});
 // // Home > About
 // Breadcrumbs::for('about', function ($trail) {
 //     $trail->parent('home');
