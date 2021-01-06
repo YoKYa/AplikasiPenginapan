@@ -1,29 +1,30 @@
 <?php
 
-namespace Database\Seeders;
+/*
+ * This file is part of the IndoRegion package.
+ *
+ * (c) Azis Hapidin <azishapidin.com | azishapidin@gmail.com>
+ *
+ */
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use AzisHapidin\IndoRegion\RawDataGetter;
 
-class DatabaseSeeder extends Seeder
+class IndoRegionVillageSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
+     *
+     * @deprecated
      *
      * @return void
      */
     public function run()
     {
         // Get Data
-        $districts = RawDataGetter::getDistricts();
-        $provinces = RawDataGetter::getProvinces();
-        $regencies = RawDataGetter::getRegencies();
         $villages = RawDataGetter::getVillages();
-        // Insert Data to Database
-        DB::table('indoregion_districts')->insert($districts);
-        DB::table('indoregion_provinces')->insert($provinces);
-        DB::table('indoregion_regencies')->insert($regencies);
+
+        // Insert Data with Chunk
         DB::transaction(function() use($villages) {
             $collection = collect($villages);
             $parts = $collection->chunk(1000);

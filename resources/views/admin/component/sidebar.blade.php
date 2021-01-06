@@ -17,12 +17,12 @@
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
-                        <a class="nav-link {{ (request()->is('admin/manageadmin')|| request()->is('admin/managepengusaha') || request()->is('admin/managepelanggan') ? 'active' : '') }}" data-toggle="collapse" href="#collapseExample" role="button"
+                        <a class="nav-link {{ (request()->is('admin/user/admin')|| request()->is('admin/user/pengusaha') || request()->is('admin/user/pelanggan') ? 'active' : '') }}" data-toggle="collapse" href="#collapseExample" role="button"
                             aria-expanded="false" aria-controls="collapseExample">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Pengguna</span>
                         </a>
-                        <div class="collapse {{ (request()->is('admin/manageadmin')|| request()->is('admin/managepengusaha') || request()->is('admin/managepelanggan') ? 'show' : '') }}" id="collapseExample">
+                        <div class="collapse {{ (request()->is('admin/user/admin')|| request()->is('admin/user/pengusaha') || request()->is('admin/user/pelanggan') ? 'show' : '') }}" id="collapseExample">
                                 <a class="nav-link ml-4" href="{{ Route('manageadmin') }}">
                                     <i class="ni ni-tv-2 text-primary"></i>
                                     <span class="nav-link-text">Admin</span>
@@ -57,6 +57,25 @@
                                 <a class="nav-link ml-4" href="{{Route('managepelanggan')}}">
                                     <i class="ni ni-tv-2 text-primary"></i>
                                     <span class="nav-link-text">Lapor Pak</span>
+                                </a>
+                        </div>
+                        <a class="nav-link" data-toggle="collapse" href="#DataMaster" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Data Master</span>
+                        </a>
+                        <div class="collapse" id="DataMaster">
+                                <a class="nav-link ml-4" href="">
+                                    <i class="ni ni-tv-2 text-primary"></i>
+                                    <span class="nav-link-text">Lokasi</span>
+                                </a>
+                                <a class="nav-link ml-4" href="{{ Route('managepengusaha') }}">
+                                    <i class="ni ni-tv-2 text-primary"></i>
+                                    <span class="nav-link-text">Pengusaha Hotel</span>
+                                </a>
+                                <a class="nav-link ml-4" href="{{Route('managepelanggan')}}">
+                                    <i class="ni ni-tv-2 text-primary"></i>
+                                    <span class="nav-link-text">Pelanggan</span>
                                 </a>
                         </div>
                     </li>
