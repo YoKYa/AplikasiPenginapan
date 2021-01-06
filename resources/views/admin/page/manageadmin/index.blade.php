@@ -2,7 +2,7 @@
 @section('judul','Manage Admin')
 @section('description', 'Deskripsi Manage Admin')
 @section('breadcrumps')
-{{ (request()->is('admin/manageadmin') ? (Breadcrumbs::render('Manage Admin')) : (request()->is('admin/managepengusaha') ? (Breadcrumbs::render('Manage Pengusaha')) : (Breadcrumbs::render('Manage Pelanggan'))))}}
+{{ (request()->is('admin/user/admin') ? (Breadcrumbs::render('Manage Admin')) : (request()->is('admin/user/pengusaha') ? (Breadcrumbs::render('Manage Pengusaha')) : (Breadcrumbs::render('Manage Pelanggan'))))}}
 @endsection
 @section('sub-judul','Tampil Data Admin')
 
@@ -51,8 +51,8 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                             <a class="dropdown-item" href="{{ Route('admin') }}/user/{{ $hasil->id }}">View</a>
-                            <a class="dropdown-item" href="{{ Route('admin') }}/user/{{ $hasil->id }}/edit">Edit</a>
-                            <a class="dropdown-item" href="">Hapus</a>
+                            <a class="dropdown-item" href="{{ Route('admin') }}/user/edit/{{ $hasil->id }}">Edit</a>
+                            <a class="dropdown-item" href="{{ Route('admin') }}/user/delete/{{ $hasil->id }}">Hapus</a>
                         </div>
                     </div>
                 </td>
