@@ -32,7 +32,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-auto">
                                         <!-- Avatar -->
-                                        <img alt="Image placeholder" src="../assets/img/theme/team-2.jpg"
+                                        <img alt="" src="{{ asset('/storage'.Auth::user()->dp_path) }}"
                                             class="avatar rounded-circle">
                                     </div>
                                     <div class="col ml--2">
@@ -61,7 +61,7 @@
                         aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg">
+                                <img alt="" src="{{ asset('/storage'.Auth::user()->dp_path) }}">
                             </span>
                             <div class="media-body  ml-2  d-none d-lg-block">
                                 <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
@@ -76,7 +76,7 @@
                             <i class="ni ni-single-02"></i>
                             <span>My profile</span>
                         </a>
-                        <a href="#!" class="dropdown-item">
+                        <a href="{{ url('/') }}" target="_blank" class="dropdown-item">
                             <i class="ni ni-settings-gear-65"></i>
                             <span>View Website</span>
                         </a>
