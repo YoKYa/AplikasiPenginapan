@@ -13,7 +13,7 @@
             style="width: 150px; height:150px; border:3px solid rgb(29, 4, 87);">
     </div>
     <div class="d-flex justify-content-center">
-        <div class="col-6">
+        <div class="col-8">
             <div class="form-group">
                 <label for="name" class="form-control-label">Nama</label>
                 <input class="form-control" type="text" value="{{ Auth::user()->name }}" id="name" disabled>
