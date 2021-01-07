@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\IklanController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\PengusahaController;
@@ -53,7 +54,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Hotel
         Route::group(['prefix' => 'hotel'], function () {
-            Route::get('/', [HotelController::class, 'adminhotel'])->name('managehotel');
+            Route::get('/', [HotelController::class, 'adminhotel'])->name('adminhotel');
         });
 
         // Lokasi
@@ -68,6 +69,17 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/p/{prov}/{kab}/{kec}',[LokasiController::class, 'lihatdesa']);
             Route::get('/p/{prov}/{kab}/{kec}/{ds}',[LokasiController::class, 'dedesa']);
             
+        });
+
+        // Iklan
+        Route::group(['prefix' => 'iklan'], function () {
+            Route::get('/', [IklanController::class,'index'])->name('adminiklan');
+            Route::get('/add', [IklanController::class,'create'])->name('admincreateiklan');
+            Route::post('/add', [IklanController::class,'store']);
+            Route::get('/{id}', [IklanController::class,'view']);
+            Route::get('/edit/{id}', [IklanController::class,'edit']);
+            Route::post('/edit', [IklanController::class,'editstore']);
+            Route::post('/delete', [IklanController::class, 'delete'])->name('admindeleteiklan');
         });
     });
 

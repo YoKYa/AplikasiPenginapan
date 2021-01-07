@@ -36,7 +36,7 @@
                         </td>
                         <td>
                             <span class="badge badge-dot mr-4">
-                                <a href="{{ Route('adminlokasi') }}/p/{{ (request()->is('admin/lokasi/provinsi') ? $hasil->id : (request()->is('admin/lokasi/kabupaten') ? $hasil->province->id.'/'.$hasil->id : (request()->is('admin/lokasi/kecamatan') ? $hasil->province->id.'/'.$hasil->regency->id.'/'.$hasil->id : '' )))  }}" class="status btn bg-primary">{{ (request()->is('admin/lokasi/provinsi') ? 'Lihat Kabupaten':(request()->is('admin/lokasi/kabupaten') ?
+                                <a href="{{ Route('adminlokasi') }}/p/{{ (request()->is('admin/lokasi/provinsi') ? $hasil->id : (request()->is('admin/lokasi/kabupaten') ? $hasil->province->id.'/'.$hasil->id : (request()->is('admin/lokasi/kecamatan') ? $hasil->province->id.'/'.$hasil->regency->id.'/'.$hasil->id : '' )))  }}" class="status btn btn-primary">{{ (request()->is('admin/lokasi/provinsi') ? 'Lihat Kabupaten':(request()->is('admin/lokasi/kabupaten') ?
                                     'Lihat Kecamatan' : (request()->is('admin/lokasi/kabupaten') ? 'Lihat Desa' : '-') ) ) }}</a>
                             </span>
                         </td>

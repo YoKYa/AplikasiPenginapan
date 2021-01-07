@@ -97,7 +97,7 @@
                             </a>
                         </div>
                         {{-- Iklan --}}
-                        <a class="nav-link" href="{{ Route('admin') }}">
+                        <a class="nav-link {{ request()->is('admin/iklan') ?'active':'' }}" href="{{ Route('adminiklan') }}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Iklan</span>
                         </a>
