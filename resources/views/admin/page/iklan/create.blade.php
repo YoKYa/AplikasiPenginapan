@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('judul')
-{{ $data->judul  ?? "Tambah Judul"}}
+{{ $data->judul  ?? "Tambah"}}
 @endsection
 @section('sub-judul','Iklan')
 @section('description', 'Halaman Iklan')
