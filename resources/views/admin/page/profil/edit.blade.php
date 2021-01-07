@@ -13,7 +13,7 @@
             style="width: 150px; height:150px; border:3px solid rgb(29, 4, 87);">
     </div>
     <div class="d-flex justify-content-center">
-        <div class="col-6">
+        <div class="col-8">
             @if ($errors->any())
             <div class="alert alert-danger alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -6,21 +6,31 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\LokasiController;
+use App\Http\Controllers\PengusahaController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Middleware\Role;
 
 Route::get('/', [HomeController::class, 'index']);
+
+
+Route::get('pengusaha/login',[PengusahaController::class, 'login']);
+Route::get('pengusaha/register',[PengusahaController::class, 'register']);
+Route::get('admin/login',[AdminController::class, 'login']);
 
 Auth::routes();
 Route::middleware(['auth'])->group(function () {
     // Ini Admin Bro
     Route::group(['middleware' => 'role', 'prefix' => 'admin'], function () {
         Route::get('/', [AdminController::class, 'index'])->name('admin');
+
+        // User
         Route::group(['prefix' => 'user'], function () {
             Route::get('/admin', [UsersController::class, 'adminuseradmin'])->name('manageadmin');
             Route::get('/pengusaha', [UsersController::class, 'adminuserpengusaha'])->name('managepengusaha');
-            Route::get('/pelanggan', [UsersController::class, 'adminuserpelanggan'])->name('managepelanggan');    
+            Route::get('/pelanggan', [UsersController::class, 'adminuserpelanggan'])->name('managepelanggan');
         });
-        
+
         // Admin Profil
         Route::group(['prefix' => 'profil'], function () {
             Route::get('/', [ProfilController::class, 'adminprofil'])->name('adminprofil');
@@ -28,26 +38,42 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/store', [ProfilController::class, 'admineditprofilstore'])->name('editadminprofilstore');
             Route::post('/updatepass', [ProfilController::class, 'adminupdatepass'])->name('updatepass');
         });
-        
+
         // User
         Route::group(['prefix' => 'user'], function () {
-            Route::get('/add',[UsersController::class, 'adminadduser'])->name('useradd');
-            Route::post('/add',[UsersController::class, 'adminadduserstore'])->name('useraddstore');
+            Route::get('/add', [UsersController::class, 'adminadduser'])->name('useradd');
+            Route::post('/add', [UsersController::class, 'adminadduserstore'])->name('useraddstore');
             Route::get('/edit/{id}', [UsersController::class, 'adminedituser'])->name('edituser');
             Route::post('/edit', [UsersController::class, 'adminedituserstore'])->name('adminedituserstore');
             Route::post('/updatepass', [UsersController::class, 'adminupdatepass'])->name('updatepassstore');
-            Route::get('/delete/{id}', [UsersController::class, 'admindeluser'])->name('deluser');    
+            Route::get('/delete/{id}', [UsersController::class, 'admindeluser'])->name('deluser');
             Route::post('/delete', [UsersController::class, 'admindeluserstore'])->name('admindelstore');
-            Route::get('/{id}',[UsersController::class, 'adminviewuser']);
+            Route::get('/{id}', [UsersController::class, 'adminviewuser']);
         });
 
         // Hotel
         Route::group(['prefix' => 'hotel'], function () {
             Route::get('/', [HotelController::class, 'adminhotel'])->name('managehotel');
         });
-        
 
-        
+        // Lokasi
+        Route::group(['prefix' => 'lokasi'], function () {
+            Route::get('/', [LokasiController::class, 'index'])->name('adminlokasi');
+            Route::get('/provinsi', [LokasiController::class, 'provinsi'])->name('adminlokasiprovinsi');
+            Route::get('/kabupaten', [LokasiController::class, 'kabupaten'])->name('adminlokasikabupaten');
+            Route::get('/kecamatan', [LokasiController::class, 'kecamatan'])->name('adminlokasikecamatan');
+            Route::get('/desa', [LokasiController::class, 'desa'])->name('adminlokasidesa');
+            Route::get('/p/{prov}',[LokasiController::class, 'lihatkabupaten']);
+            Route::get('/p/{prov}/{kab}',[LokasiController::class, 'lihatkecamatan']);
+            Route::get('/p/{prov}/{kab}/{kec}',[LokasiController::class, 'lihatdesa']);
+            Route::get('/p/{prov}/{kab}/{kec}/{ds}',[LokasiController::class, 'dedesa']);
+            
+        });
+    });
+
+    // Ini Pengusaha Bro
+    Route::group(['middleware'=>'role', 'prefix' => 'pengusaha'], function () {
+           
     });
 });
 ?>

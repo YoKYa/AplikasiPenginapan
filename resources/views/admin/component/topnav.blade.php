@@ -2,18 +2,8 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar links -->
-            <ul class="navbar-nav align-items-center  ml-md-auto ">
-                <li class="nav-item d-xl-none">
-                    <!-- Sidenav toggler -->
-                    <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin"
-                        data-target="#sidenav-main">
-                        <div class="sidenav-toggler-inner">
-                            <i class="sidenav-toggler-line"></i>
-                            <i class="sidenav-toggler-line"></i>
-                            <i class="sidenav-toggler-line"></i>
-                        </div>
-                    </div>
-                </li>
+            <ul class="navbar-nav align-items-center  ml-md-auto ml-sm-auto">
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
@@ -27,10 +17,16 @@
                             </h6>
                         </div>
                         <!-- List group -->
+                        <div class="list-group list-grup-flush">
+
+                        </div>
                         <div class="list-group list-group-flush">
+
                             <a href="#!" class="list-group-item list-group-item-action">
                                 <div class="row align-items-center">
+
                                     <div class="col-auto">
+
                                         <!-- Avatar -->
                                         <img alt="" src="{{ asset('/storage'.Auth::user()->dp_path) }}"
                                             class="avatar rounded-circle">
@@ -56,6 +52,22 @@
                 </li>
             </ul>
             <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+                <div style="position: relative; right:75px; top:-6px">
+                    <div class="navbar-nav" style="position: absolute">
+                        <li class="d-xl-none">
+                            <!-- Sidenav toggler -->
+                            <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin"
+                                data-target="#sidenav-main">
+                                <div class="sidenav-toggler-inner">
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
