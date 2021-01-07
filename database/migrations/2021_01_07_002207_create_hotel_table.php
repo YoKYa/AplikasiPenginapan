@@ -19,7 +19,9 @@ class CreateHotelTable extends Migration
             $table->string('nama_hotel')->nullable();
             $table->string('alamat_hotel')->nullable();
             $table->integer('jumlah_kamar',false,true)->default(0);
-            $table->bigInteger('harga',false,true)->default(0);
+            $table->unsignedBigInteger('harga',false)->default(0);
+            $table->string('file_verify')->nullable();
+            $table->date('verified_at')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onUpdate('cascade');
         });

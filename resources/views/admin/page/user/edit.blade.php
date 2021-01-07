@@ -25,6 +25,15 @@
                     <label for="email" class="form-control-label">Email</label>
                     <input class="form-control" type="text" value="{{ $user->email }}" id="email" name="email">
                 </div>
+                <div class="form-group">
+                    <label for="Role" class="form-control-label" for="role">Role</label>
+                    <select class="custom-select" id="role" required name="role">
+                        <option disabled>Pilih...</option>
+                        <option value="admin" {{ $user->role == 'admin' ? 'selected': ''}}>Admin</option>
+                        <option value="pengusaha" {{ $user->role == 'pengusaha' ? 'selected': ''}}>Pengusaha</option>
+                        <option value="pelanggan" {{ $user->role == 'pelanggan' ? 'selected': ''}}>Pelanggan</option>
+                    </select>
+                </div>
                 <label for="dp" class="form-control-label">Foto Profil</label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="dp" lang="en" name="dp" accept="image/*"

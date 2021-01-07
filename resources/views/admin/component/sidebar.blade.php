@@ -4,7 +4,7 @@
         <!-- Brand -->
         <div class="sidenav-header  align-items-center">
             <a class="navbar-brand" href="javascript:void(0)">
-                <img src="{{ asset('/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+                <img src="{{ asset('/assets/img/logo/logo.png') }}" class="navbar-brand-img" alt="...">
             </a>
         </div>
         <div class="navbar-inner">
@@ -19,23 +19,19 @@
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                         {{-- Administrasi --}}
-                        <a class="nav-link " data-toggle="collapse" href="#administrasi" role="button"
+                        <a class="nav-link {{ (request()->is('admin/hotel/verify') ? 'active': '') }}" data-toggle="collapse" href="#administrasi" role="button"
                             aria-expanded="false" aria-controls="administrasi">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Administrasi</span>
                         </a>
-                        <div class="collapse" id="administrasi">
-                            <a class="nav-link ml-4" href="{{ Route('manageadmin') }}">
+                        <div class="collapse {{ (request()->is('admin/hotel/verify') ? 'show':'') }}" id="administrasi">
+                            <a class="nav-link ml-4" href="">
                                 <i class="ni ni-tv-2 text-primary"></i>
-                                <span class="nav-link-text">Admin</span>
+                                <span class="nav-link-text">Semua Pesanan</span>
                             </a>
-                            <a class="nav-link ml-4" href="{{ Route('managepengusaha') }}">
+                            <a class="nav-link ml-4" href="{{ Route('verifyhotel') }}">
                                 <i class="ni ni-tv-2 text-primary"></i>
-                                <span class="nav-link-text">Pengusaha Hotel</span>
-                            </a>
-                            <a class="nav-link ml-4" href="{{Route('managepelanggan')}}">
-                                <i class="ni ni-tv-2 text-primary"></i>
-                                <span class="nav-link-text">Pelanggan</span>
+                                <span class="nav-link-text">Verifikasi Hotel</span>
                             </a>
                         </div>
                         {{-- Pengguna --}}
@@ -75,23 +71,19 @@
                                 <i class="ni ni-tv-2 text-primary"></i>
                                 <span class="nav-link-text">Laporan Pesanan</span>
                             </a>
-                            <a class="nav-link ml-4" href="{{Route('managepelanggan')}}">
-                                <i class="ni ni-tv-2 text-primary"></i>
-                                <span class="nav-link-text">Lapor Pak</span>
-                            </a>
                         </div>
                         {{-- Data Master --}}
-                        <a class="nav-link" data-toggle="collapse" href="#DataMaster" role="button"
+                        <a class="nav-link {{ (request()->is('admin/lokasi')||request()->is('admin/hotel') ? 'active' : '') }}" data-toggle="collapse" href="#DataMaster" role="button"
                             aria-expanded="false" aria-controls="collapseExample">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Data Master</span>
                         </a>
-                        <div class="collapse {{ (request()->is('admin/lokasi') ? 'show' : '') }} " id="DataMaster">
+                        <div class="collapse {{ (request()->is('admin/lokasi')||request()->is('admin/hotel') ? 'show' : '') }} " id="DataMaster">
                             <a class="nav-link ml-4" href="{{ Route('adminlokasi') }}">
                                 <i class="ni ni-tv-2 text-primary"></i>
                                 <span class="nav-link-text">Lokasi</span>
                             </a>
-                            <a class="nav-link ml-4" href="{{ Route('adminlokasi') }}">
+                            <a class="nav-link ml-4" href="{{ Route('adminhotel') }}">
                                 <i class="ni ni-tv-2 text-primary"></i>
                                 <span class="nav-link-text">Hotel</span>
                             </a>
@@ -106,7 +98,7 @@
                 <!-- Divider -->
                 <hr class="my-3">
                 {{-- H --}}
-                <small class="copyright text-center  text-lg-left  text-muted">RentRoom Project 2021</small>
+                <small class="copyright text-center  text-lg-left  text-muted">RentRoom Project 2021 @MI18Unesa</small>
             </div>
         </div>
     </div>

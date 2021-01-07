@@ -8,7 +8,7 @@
 
 @section('content')
 
-<!-- Light table -->
+{{-- <!-- Light table --> --}}
 <div class="table-responsive">
     <table class="table align-items-center table-flush">
         <thead class="thead-light">
@@ -18,8 +18,8 @@
                 <th scope="col" class="sort" data-sort="budget">Email</th>
                 <th scope="col" class="text-right">
                     <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-success mr-2" style="border:2px solid #5e72e4" href="{{ Route('useradd') }}"
-                            role="button" aria-haspopup="true">
+                        <a class="btn btn-sm btn-icon-only text-success mr-2" style="border:2px solid #5e72e4"
+                            href="{{ Route('useradd') }}" role="button" aria-haspopup="true">
                             <i class="fas fa-plus"></i>
                         </a>
                     </div>

@@ -80,6 +80,7 @@ class UsersController extends Controller
         // Set user name
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->role = $request->input('role');
 
         // Check if a profile image has been uploaded
         if ($request->has('dp')) {

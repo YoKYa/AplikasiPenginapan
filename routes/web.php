@@ -54,7 +54,10 @@ Route::middleware(['auth'])->group(function () {
 
         // Hotel
         Route::group(['prefix' => 'hotel'], function () {
-            Route::get('/', [HotelController::class, 'adminhotel'])->name('adminhotel');
+            Route::get('/', [HotelController::class, 'index'])->name('adminhotel');
+            Route::get('/create', [HotelController::class, 'create'])->name('adminhotelcreate');
+            Route::post('/create', [HotelController::class, 'storecreate']);
+            Route::get('/verify', [HotelController::class, 'verifyhotel'])->name('verifyhotel');
         });
 
         // Lokasi

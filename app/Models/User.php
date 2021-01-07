@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->profile_image;
     }
+    public function hotel()
+    {
+        return $this->hasOne(Hotel::class);
+    }
 }
