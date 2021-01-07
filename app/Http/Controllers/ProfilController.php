@@ -56,24 +56,23 @@ class ProfilController extends Controller
     }
     public function adminupdatepass(Request $request)
     {
-        
+
         $request->validate([
             'oldpass'     =>  'required | min:6',
             'newpass'     =>  'required | min:6',
             'newpass'     =>  'required | min:6',
         ]);
-        
+
         if (Hash::check($request->oldpass, Auth::user()->password)) {
             if ($request->newpass == $request->repass) {
                 $user = User::findOrFail(Auth::user()->id);
                 $user->update(['password' => Hash::make($request->newpass)]);
-                
+
                 return redirect()->back()->with(['status' => 'Password Update successfully.']);
             }
             return redirect()->back()->with(['error' => 'Gagal Ganti Pass.']);
-        }else {
+        } else {
             return redirect()->back()->with(['error' => 'Gagal Ganti Pass.']);
         }
-        
     }
 }

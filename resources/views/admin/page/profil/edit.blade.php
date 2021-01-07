@@ -53,7 +53,6 @@
                     <button type="submit" name="Save" class="btn btn-md btn-primary"
                         style="width: 200px">Simpan</button>
                 </div>
-
             </form>
             <hr>
             <h2>Edit Password</h2>

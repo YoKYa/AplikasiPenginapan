@@ -20,6 +20,8 @@ class CreateHotelTable extends Migration
             $table->string('alamat_hotel')->nullable();
             $table->integer('jumlah_kamar',false,true)->default(0);
             $table->bigInteger('harga',false,true)->default(0);
+            $table->string('kepemilikan')->nullable();
+            $table->boolean('verified')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onUpdate('cascade');
         });
