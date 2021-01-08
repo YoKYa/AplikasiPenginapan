@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HalamanUtamaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\IklanController;
@@ -12,9 +12,8 @@ use App\Http\Controllers\PengusahaController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Middleware\Role;
 
-Route::get('/', [HomeController::class, 'index']);
-
-
+Route::get('/', [HalamanUtamaController::class, 'halamanutama']);
+Route::get('/detailhotel', [HalamanUtamaController::class, 'detailhotel'])->name('detailhotel');
 Route::get('pengusaha/login',[PengusahaController::class, 'login']);
 Route::get('pengusaha/register',[PengusahaController::class, 'register']);
 Route::get('admin/login',[AdminController::class, 'login']);
