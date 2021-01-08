@@ -36,7 +36,7 @@
                     {{ ($hasil->verified_at == null ? 'Belum': 'Sudah') }}
                 </td>
                 <td class="text-right">
-                <a href="{{ asset('/storage/'.$hasil->file_verify) }}" target="_blank">Download</a>
+                    <a href="{{ Route('adminhotel') }}/{{ $hasil->id }}" class="btn btn-primary">View</a>
                 </td>
             </tr>
             @endforeach
@@ -52,7 +52,7 @@
 <div class="card-footer py-4">
     <nav>
         <ul class="pagination justify-content-end mb-0">
-            {{-- {{ $admin->links() }} --}}
+            {{ $hotel->links() }}
         </ul>
     </nav>
 </div>

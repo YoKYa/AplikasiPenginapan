@@ -72,4 +72,21 @@ class HotelController extends Controller
         $hotel = Hotel::where('verified_at',null)->paginate(10);
         return view('admin.page.hotel.verify',compact('hotel'));
     }
+    public function view($id)
+    {
+        $hotel = Hotel::where('id', $id)->first();
+        return view('admin.page.hotel.view',compact('hotel'));
+    }
+    public function verifyhotelstore(Request $request)
+    {
+        if(isset($request->verify)){
+            $hotel = Hotel::where('id', $request->verify)->first();
+            $hotel->verified_at = date('Y-m-d');
+            $hotel->save();
+            return back()->with(['status' => 'Berhasil Verify Hotel.']);
+        }else {
+            return back()->with(['error' => 'Gagal']);
+        }
+        
+    }
 }

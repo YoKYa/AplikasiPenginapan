@@ -58,6 +58,9 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/create', [HotelController::class, 'create'])->name('adminhotelcreate');
             Route::post('/create', [HotelController::class, 'storecreate']);
             Route::get('/verify', [HotelController::class, 'verifyhotel'])->name('verifyhotel');
+            Route::get('/{id}', [HotelController::class, 'view']);
+            Route::post('/verify', [HotelController::class, 'verifyhotelstore'])->name('verifyhotelstore');
+
         });
 
         // Lokasi
