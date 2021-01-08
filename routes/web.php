@@ -1,16 +1,17 @@
 <?php
 
+use App\Http\Middleware\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HalamanUtamaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\IklanController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LokasiController;
-use App\Http\Controllers\PengusahaController;
 use App\Http\Controllers\ProfilController;
-use App\Http\Middleware\Role;
+use App\Http\Controllers\PengusahaController;
+use App\Http\Controllers\HalamanUtamaController;
 
 Route::get('/', [HalamanUtamaController::class, 'halamanutama']);
 Route::get('/detailhotel', [HalamanUtamaController::class, 'detailhotel'])->name('detailhotel');
@@ -85,6 +86,11 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/edit/{id}', [IklanController::class,'edit']);
             Route::post('/edit', [IklanController::class,'editstore']);
             Route::post('/delete', [IklanController::class, 'delete'])->name('admindeleteiklan');
+        });
+
+        Route::group(['prefix' => 'order'], function () {
+            Route::get('/', [OrderController::class, 'index'])->name('adminorder');
+            Route::get('/create', [OrderController::class, 'create'])->name('admincreateorder');
         });
     });
 

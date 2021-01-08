@@ -19,15 +19,15 @@
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                         {{-- Administrasi --}}
-                        <a class="nav-link {{ (request()->is('admin/hotel/verify') ? 'active': '') }}" data-toggle="collapse" href="#administrasi" role="button"
+                        <a class="nav-link {{ (request()->is('admin/hotel/verify') || request()->is('admin/order') ? 'active': '') }}" data-toggle="collapse" href="#administrasi" role="button"
                             aria-expanded="false" aria-controls="administrasi">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Administrasi</span>
                         </a>
-                        <div class="collapse {{ (request()->is('admin/hotel/verify') ? 'show':'') }}" id="administrasi">
-                            <a class="nav-link ml-4" href="">
+                        <div class="collapse {{ (request()->is('admin/order') || (request()->is('admin/hotel/verify')) ? 'show':'') }}" id="administrasi">
+                            <a class="nav-link ml-4" href="{{ Route('adminorder') }}">
                                 <i class="ni ni-tv-2 text-primary"></i>
-                                <span class="nav-link-text">Semua Pesanan</span>
+                                <span class="nav-link-text">Pesanan</span>
                             </a>
                             <a class="nav-link ml-4" href="{{ Route('verifyhotel') }}">
                                 <i class="ni ni-tv-2 text-primary"></i>
