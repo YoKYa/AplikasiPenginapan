@@ -139,7 +139,7 @@
                         <div class="card-body p-4"><img
                                 src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                                 alt="" class="img-fluid d-block mx-auto mb-3">
-                            <h5> <a href="#" class="text-dark">Oyo</a></h5>
+                            <h5> <a href="{{ Route('detailhotel') }}" class="text-dark">Oyo</a></h5>
                             <p class="small text-muted font-italic">Jawa Timur - Surabaya (Ketintang)</p>
                         </div>
                     </div>

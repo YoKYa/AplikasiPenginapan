@@ -13,7 +13,7 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PengusahaController;
 use App\Http\Controllers\HalamanUtamaController;
 
-Route::get('/', [HalamanUtamaController::class, 'halamanutama']);
+Route::get('/', [HalamanUtamaController::class, 'halamanutama'])->name('halamanutama');
 Route::get('/detailhotel', [HalamanUtamaController::class, 'detailhotel'])->name('detailhotel');
 Route::get('pengusaha/login',[PengusahaController::class, 'login']);
 Route::get('pengusaha/register',[PengusahaController::class, 'register']);
