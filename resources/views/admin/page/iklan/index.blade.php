@@ -3,7 +3,7 @@
 @section('sub-judul','Iklan')
 @section('description', 'Halaman Iklan')
 @section('breadcrumps')
-    
+
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -17,8 +17,8 @@
                         <th scope="col" class="sort" data-sort="judul">Judul</th>
                         <th scope="col" class="text-right">
                             <div class="dropdown">
-                                <a class="btn btn-sm btn-icon-only text-success mr-2" style="border:2px solid #5e72e4" href="{{ Route('admincreateiklan') }}"
-                                    role="button" aria-haspopup="true">
+                                <a class="btn btn-sm btn-icon-only text-success mr-2" style="border:2px solid #5e72e4"
+                                    href="{{ Route('admincreateiklan') }}" role="button" aria-haspopup="true">
                                     <i class="fas fa-plus"></i>
                                 </a>
                             </div>
@@ -42,19 +42,20 @@
                         </td>
                         <td class="text-right">
                             <div class="dropdown">
-                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
+                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-ellipsis-v"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                     <a class="dropdown-item" href="{{ Route('adminiklan') }}/{{ $hasil->id }}">View</a>
-                                    <a class="dropdown-item" href="{{ Route('adminiklan') }}/edit/{{ $hasil->id }}">Edit</a>
+                                    <a class="dropdown-item"
+                                        href="{{ Route('adminiklan') }}/edit/{{ $hasil->id }}">Edit</a>
                                     <form action="{{ Route('admindeleteiklan') }}" method="post">
                                         <input type="hidden" name="id" value="{{ $hasil->id }}">
                                         @csrf
                                         <button type="submit" class="dropdown-item">Hapus</button>
                                     </form>
-                                    
+
                                 </div>
                             </div>
                         </td>

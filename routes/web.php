@@ -24,14 +24,12 @@ Route::middleware(['auth'])->group(function () {
     // Ini Admin Bro
     Route::group(['middleware' => 'role', 'prefix' => 'admin'], function () {
         Route::get('/', [AdminController::class, 'index'])->name('admin');
-
         // User
         Route::group(['prefix' => 'user'], function () {
             Route::get('/admin', [UsersController::class, 'adminuseradmin'])->name('manageadmin');
             Route::get('/pengusaha', [UsersController::class, 'adminuserpengusaha'])->name('managepengusaha');
             Route::get('/pelanggan', [UsersController::class, 'adminuserpelanggan'])->name('managepelanggan');
         });
-
         // Admin Profil
         Route::group(['prefix' => 'profil'], function () {
             Route::get('/', [ProfilController::class, 'adminprofil'])->name('adminprofil');
@@ -39,7 +37,6 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/store', [ProfilController::class, 'admineditprofilstore'])->name('editadminprofilstore');
             Route::post('/updatepass', [ProfilController::class, 'adminupdatepass'])->name('updatepass');
         });
-
         // User
         Route::group(['prefix' => 'user'], function () {
             Route::get('/add', [UsersController::class, 'adminadduser'])->name('useradd');
@@ -51,7 +48,6 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/delete', [UsersController::class, 'admindeluserstore'])->name('admindelstore');
             Route::get('/{id}', [UsersController::class, 'adminviewuser']);
         });
-
         // Hotel
         Route::group(['prefix' => 'hotel'], function () {
             Route::get('/', [HotelController::class, 'index'])->name('adminhotel');
@@ -62,7 +58,6 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/verify', [HotelController::class, 'verifyhotelstore'])->name('verifyhotelstore');
 
         });
-
         // Lokasi
         Route::group(['prefix' => 'lokasi'], function () {
             Route::get('/', [LokasiController::class, 'index'])->name('adminlokasi');

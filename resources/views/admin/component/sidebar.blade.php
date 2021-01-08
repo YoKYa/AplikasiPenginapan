@@ -19,12 +19,14 @@
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                         {{-- Administrasi --}}
-                        <a class="nav-link {{ (request()->is('admin/hotel/verify') || request()->is('admin/order') ? 'active': '') }}" data-toggle="collapse" href="#administrasi" role="button"
-                            aria-expanded="false" aria-controls="administrasi">
+                        <a class="nav-link {{ (request()->is('admin/hotel/verify') || request()->is('admin/order') ? 'active': '') }}"
+                            data-toggle="collapse" href="#administrasi" role="button" aria-expanded="false"
+                            aria-controls="administrasi">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Administrasi</span>
                         </a>
-                        <div class="collapse {{ (request()->is('admin/order') || (request()->is('admin/hotel/verify')) ? 'show':'') }}" id="administrasi">
+                        <div class="collapse {{ (request()->is('admin/order') || (request()->is('admin/hotel/verify')) ? 'show':'') }}"
+                            id="administrasi">
                             <a class="nav-link ml-4" href="{{ Route('adminorder') }}">
                                 <i class="ni ni-tv-2 text-primary"></i>
                                 <span class="nav-link-text">Pesanan</span>
@@ -73,12 +75,14 @@
                             </a>
                         </div>
                         {{-- Data Master --}}
-                        <a class="nav-link {{ (request()->is('admin/lokasi')||request()->is('admin/hotel') ? 'active' : '') }}" data-toggle="collapse" href="#DataMaster" role="button"
-                            aria-expanded="false" aria-controls="collapseExample">
+                        <a class="nav-link {{ (request()->is('admin/lokasi')||request()->is('admin/hotel') ? 'active' : '') }}"
+                            data-toggle="collapse" href="#DataMaster" role="button" aria-expanded="false"
+                            aria-controls="collapseExample">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Data Master</span>
                         </a>
-                        <div class="collapse {{ (request()->is('admin/lokasi')||request()->is('admin/hotel') ? 'show' : '') }} " id="DataMaster">
+                        <div class="collapse {{ (request()->is('admin/lokasi')||request()->is('admin/hotel') ? 'show' : '') }} "
+                            id="DataMaster">
                             <a class="nav-link ml-4" href="{{ Route('adminlokasi') }}">
                                 <i class="ni ni-tv-2 text-primary"></i>
                                 <span class="nav-link-text">Lokasi</span>
@@ -89,7 +93,8 @@
                             </a>
                         </div>
                         {{-- Iklan --}}
-                        <a class="nav-link {{ request()->is('admin/iklan') ?'active':'' }}" href="{{ Route('adminiklan') }}">
+                        <a class="nav-link {{ request()->is('admin/iklan') ?'active':'' }}"
+                            href="{{ Route('adminiklan') }}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Iklan</span>
                         </a>

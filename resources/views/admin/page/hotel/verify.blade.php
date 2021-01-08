@@ -36,7 +36,7 @@
                     {{ ($hasil->verified_at == null ? 'Belum': 'Sudah') }}
                 </td>
                 <td class="text-right">
-                <a href="{{ Route('adminhotel') }}/{{ $hasil->id }}" class="btn btn-primary">View</a>
+                    <a href="{{ Route('adminhotel') }}/{{ $hasil->id }}" class="btn btn-primary">View</a>
                 </td>
             </tr>
             @endforeach

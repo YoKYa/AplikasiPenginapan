@@ -3,7 +3,7 @@
 @section('sub-judul','View Hotel')
 @section('description', 'View Hotel')
 @section('breadcrumps')
-    
+
 @endsection
 @section('content')
 Nama Hotel : {{ $hotel->nama_hotel }} <br>
@@ -15,11 +15,9 @@ Harga : {{ $hotel->harga }} <br>
     @csrf
     <input type="hidden" name="verify" value="{{ $hotel->id }}">
     <?php if ($hotel->verified_at == null) { ?>
-        <button type="submit" class="btn btn-primary">Setuju Verifikasi</button>
+    <button type="submit" class="btn btn-primary">Setuju Verifikasi</button>
     <?php } else { ?>
-        Di verifikasi pada : {{ $hotel->verified_at }}
-    <?php } ?> 
-    
+    Di verifikasi pada : {{ $hotel->verified_at }}
+    <?php } ?>
 </form>
-
 @endsection
